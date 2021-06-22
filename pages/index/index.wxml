@@ -1,0 +1,76 @@
+<view class="content">
+  <view class="bg">
+    <!--
+    <image src="/images/indexLogo.png" style="width:250px;height:170px;" class="logo"></image>
+    -->
+    <view class="swiper-container">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+        circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{imgUrls}}" wx:key="unique">
+          <swiper-item>
+            <image src="{{item}}" class="img" bindtap="swipclick" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="search" bindtap="search">
+      <view>
+        <image src="/images/icon/search.jpg" style="width:20px;height:21px;"></image>
+        搜索二手书
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="title">为你推荐</view>
+    <view class="items">
+      <view class="item">
+        <view class="priceInfo">
+          <view class="picture">
+            <image src="/images/order/1.jpg" style="width:80px;height:115px;margin:8px;"></image>
+          </view>
+          <view>
+            <view class="course">2019年英语 四六级真题 内附答案{{course}}</view>
+            <view class="bookName">书名{{bookNane}}</view>
+            <view class="author">{{author}}作者</view>
+
+            <text class="rmb">￥</text>
+            <text class="count">25{{count}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="item">
+        <view class="priceInfo">
+          <view class="picture">
+            <image src="/images/order/2.jpg" style="width:80px;height:115px;margin:8px;"></image>
+          </view>
+          <view>
+            <view class="course">数据挖掘：概念与技术教材{{course}}</view>
+            <view class="bookName">书名{{bookNane}}</view>
+            <view class="author">{{author}}作者</view>
+
+            <text class="rmb">￥</text>
+            <text class="count">25</text>
+          </view>
+        </view>
+      </view>
+      <view class="item">
+        <view class="priceInfo">
+          <view class="picture">
+            <image src="/images/order/3.jpg" style="width:80px;height:115px;margin:8px;"></image>
+          </view>
+          <view>
+            <view class="course">教材 电工学（第七版下）正版{{course}}</view>
+            <view class="bookName">书名{{bookNane}}</view>
+            <view class="author">{{author}}秦曾煜</view>
+            
+            <text class="rmb">￥</text>
+            <text class="count">20{{count}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<tabbar tabbar="{{tabbar}}"></tabbar>

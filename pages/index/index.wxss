@@ -1,0 +1,120 @@
+.content {
+  font-family: "Microsoft YaHei";
+}
+
+.bg {
+  width: 100%;
+  /*background-color: #47C1C4;*/
+  text-align: center;
+}
+
+swiper {
+  height: 500rpx;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-container .swiper {
+  height: 400rpx;
+}
+
+.swiper-container .swiper .img {
+  width: 95%;
+  height: 95%;
+}
+
+.search {
+  height: 40px;
+  width: 75%;
+  background-color: #ffffff;
+  border: 2px solid#8CF6FB;
+  margin: 0 auto;
+  box-shadow: rgb(94, 181, 182) 3px 3px 3px;
+  margin-top: 5px;
+  border-radius: 50px;
+  line-height: 40px;
+}
+
+.search view {
+  text-align: center;
+  width: 85%;
+  font-size: 15px;
+  color: #999999;
+}
+
+.title {
+  padding: 7px;
+  font-size: 21px;
+  color: black;
+}
+
+.items {
+  margin-bottom: 20px;
+}
+
+.item {
+  /* border: 1px solid #47C1C4;*/
+  width: 100%;
+  height: 130px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.priceInfo {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.course {
+  font-size: 18px;
+  color: black;
+  line-height: 30px;
+}
+
+.bookName {
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 25px;
+  color: #999999;
+}
+
+.author {
+  font-size: 15px;
+  line-height: 25px;
+  color: #F07278;
+}
+
+.type {
+  font-size: 15px;
+  color: #47C1C4;
+}
+
+.rmb {
+  font-size: 13px;
+  line-height: 30px;
+  position: relative;
+  top: 25px;
+}
+
+.count {
+  font-size: 18px;
+  position: relative;
+  top: 25px;
+}
+
+.desc {
+  font-size: 12px;
+  background-color: #47C1C4;
+  height: 30px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 30px;
+}

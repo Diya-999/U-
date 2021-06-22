@@ -1,0 +1,196 @@
+<!--pages/mine/mine.wxml-->
+<view class="content">
+  <view class="bg">
+    <view class="head">
+      <image class="headIcon" src="/images/order/5.jpg"></image>
+      <view class="login">
+        <view>小U</view>
+        <!-- <view class="account">账号：{{zhanghaoming}}</view> -->
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="tabNav">
+      <view class="{{currentTab==0?'select':'default'}}" data-current="0" bindtap="switchNav">我发布的</view>
+      <view class="{{currentTab==1?'select':'default'}}" data-current="1" bindtap="switchNav">我卖出的</view>
+      <view class="{{currentTab==2?'select':'default'}}" data-current="2" bindtap="switchNav">我买到的</view>
+      <view class="{{currentTab==3?'select':'default'}}" data-current="3" bindtap="switchNav">我的消息</view>
+    </view>
+    <view class="orderInfo">
+      <view class="orderInfo-item" wx:for="{{sendList}}" wx:key="index">
+        <text>{{item}}</text>
+        <image class="triangle" hidden="true" src="../../images/icon/Uptriangle.png"></image>
+      </view>
+    </view>
+    <view class="line"></view>
+  </view>
+
+  <view class="orderPage">
+    <block wx:for="{{orders}}">
+      <!-- 我发布的 -->
+      <block wx:if="{{currentTab == 0}}">
+        <view class="item sentitem ">
+          <image class="bookPicture" src="/images/order/2.jpg"></image>
+          <view class="itemInfo">
+            <view class="title">
+              <text>{{item.title}}</text>
+            </view>
+            <view class="price">
+              <text class="rmb">￥</text>
+              <text class="count">{{item.price}}</text>
+            </view>
+            <view class="address">
+              {{item.address}}
+            </view>
+            <van-button round size="small" class="editbotton" bind:click='gotoEditPage'>编辑</van-button>
+            <!-- <button class="edite">
+              编辑
+            </button> -->
+          </view>
+        </view>
+      </block>
+      <!-- 我卖出的 -->
+      <block wx:elif="{{currentTab == 1}}">
+        <view class="item saleitem">
+          <view class="topline">
+            <text class="condition">{{item.condition}}</text>
+          </view>
+          <view class="middle">
+            <view class="left">
+              <image class="boughtPicture" src="{{item.photo}}"></image>
+              <text class="orderId">订单号：{{item.id}}</text>
+            </view>
+            <view class="right">
+              <view class="title">
+                <text>{{item.title}}</text>
+              </view>
+              <view class="price">
+                <text class="rmb">￥</text>
+                <text class="count">{{item.price}}</text>
+              </view>
+              <view class="time">{{item.time}}</view>
+            </view>
+          </view>
+          <!-- <view class="bottom">
+            <van-icon name="chat-o" size="40rpx" />
+            <text class="contact">联系买家</text>
+            <van-button round size="small" class="saleevaluatebotton" bind:click = 'gotoEvaluatePage'>评价</van-button>
+          </view> -->
+        </view>
+      </block>
+      <!-- 买到的 -->
+      <block wx:elif="{{currentTab == 2}}">
+        <view class="item boughtitem">
+          <view class="topline">
+            <van-icon name="shop-o" size="35rpx" />
+            <text>{{item.buyername}}</text>
+            <text class="condition">{{item.condition}}</text>
+          </view>
+          <view class="middle">
+            <view class="left">
+              <image class="boughtPicture" src="{{item.photo}}"></image>
+              <text class="orderId">订单号：{{item.id}}</text>
+            </view>
+            <view class="right">
+              <view class="title">
+                <text>{{item.title}}</text>
+              </view>
+              <view class="price">
+                <text class="rmb">￥</text>
+                <text class="count">{{item.price}}</text>
+              </view>
+              <view class="time">{{item.time}}</view>
+            </view>
+          </view>
+          <!-- <view class="bottom">
+            <view class="price">
+              <text class="payed">已付款：</text>
+              <text class="rmb">￥</text>
+              <text class="count">{{item.price}}</text>
+            </view>
+            <van-button round size="small" class="refundbotton" bind:click = 'gotoRefundPage'>退款</van-button> 
+            <van-button round size="small" class="evaluatebotton" bind:click='gotoEvaluatePage'>评价</van-button>
+          </view> -->
+        </view>
+      </block>
+      <!-- 我的消息 -->
+      <block wx:elif="{{currentTab == 3}}">
+        <!-- <view class="item massage">
+          <view class="topline">
+            <text>{{item.buyername}}</text>
+            <van-icon name="wechat-pay" />
+          </view>
+          <view class="left">
+            <van-image width="100" height="100" lazy-load src="{{item.userphoto}}" />
+          </view>
+          <view class="right">
+            <van-image width="10rem" height="10rem" fit="contain" src="{{item.itemphoto}}" />
+            <text>{{item.content}}</text>
+            <text>{{item.time}}</text>
+          </view>
+        </view> -->
+        <view class="blank"></view>
+        <view class="bottom_box">
+          <view class="bottom_card" bindtap="go" data-go="/pages/parse/parse" data-status="1">
+            <view class="bottom_1">
+              <image src="/images/parse.png"></image>
+              <view>我的钱包</view>
+            </view>
+            <image src="/images/go.png"></image>
+          </view>
+          <view class="bottom_card" bindtap="go" data-go="/pages/kefu/kefu" data-status="1">
+            <view class="bottom_1">
+              <image src="/images/kefu.png"></image>
+              <view>联系客服</view>
+            </view>
+            <image src="/images/go.png"></image>
+          </view>
+          <view class="bottom_card">
+            <view class="bottom_1">
+              <image src="/images/feedback.png"></image>
+              <view>问题反馈</view>
+            </view>
+            <image src="/images/go.png"></image>
+            <button open-type="feedback"></button>
+          </view>
+          <view class="bottom_card" bindtap="showShare">
+            <view class="bottom_1">
+              <image src="/images/fen.png"></image>
+              <view>好用分享</view>
+            </view>
+            <image src="/images/go.png"></image>
+          </view>
+          <view class="bottom_card" bindtap="go" data-go="/pages/about/about">
+            <view class="bottom_1">
+              <image src="/images/guanyu.png"></image>
+              <view>关于程序</view>
+            </view>
+            <image src="/images/go.png"></image>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+  <tabbar tabbar="{{tabbar}}"></tabbar>
+</view>
+
+
+<!--分享弹出层-->
+<van-popup show="{{ showShare }}" bind:close="closePop">
+      <view class="share_contain">
+            <view class="share_border"></view>
+            <view class="share_title">分享到</view>
+            <view class="share_box">
+                  <view class="share_one">
+                        <image src="/images/weixin.png"></image>
+                        <view>微信好友</view>
+                        <button class="share_button" open-type="share"></button>
+                  </view>
+                  <view class="share_bor"></view>
+                  <view class="share_one">
+                        <image src="/images/pyq.png"></image>
+                        <view>朋友圈</view>
+                        <button class="share_button" bindtap="preview" data-link="{{poster}}"></button>
+                  </view>
+            </view>
+      </view>
+</van-popup>

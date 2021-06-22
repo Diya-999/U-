@@ -1,0 +1,13 @@
+<view class="content">
+  <navigator url="/pages/post/post" hover-class="navigator-hover" style="position:fixed;bottom:180rpx;right:30%;">
+    <image src="/images/icon/photo.png" style="width:50px;height:50px;border-radius:50%;"></image>
+   <text style="display:block">发帖子</text>
+  </navigator>
+  <navigator url="/pages/postUnused/postUnused" hover-class="navigator-hover" style="position:fixed;bottom:180rpx;left:30%;">
+    <image src="/images/icon/sent.png" style="width:50px;height:50px;"></image>
+    <text style="display:block">发闲置</text>
+  </navigator>
+  <navigator url="../pages/index/index" open-type="navigateBack" hover-class="other-navigator-hover">
+    <image src="/images/icon/x.png" style="width:30px;height:30px;position:fixed;bottom:50rpx;right:50%"></image>
+  </navigator>
+</view>

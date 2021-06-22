@@ -1,0 +1,34 @@
+<view class="search">
+  <view class="searchBg">
+    <view>
+      <image src="/images/indexLodg.png" style="width:20px;height:21px;"></image>
+    </view>
+    <view>
+      <input type="text" placeholder="搜书" placeholder-class="holder" bindblur="searchGoods" id="search" value="{{name}}" />
+    </view>
+  </view>
+  <view class="btn" bindtap="resetSearch">取消</view>
+</view>
+<view class="hr"></view>
+<block wx:if="{{result.length > 0}}">
+  <block wx:for="{{result}}">
+    <view class="item">
+      <view class="name">{{item}}</view>
+      <view class="hr"></view>
+    </view>
+  </block>
+</block>
+<block  wx:else>
+  <view class="hotSearch">
+    <view class="title">
+      <view class="left">热门搜索</view>
+      <view class="right">换一批</view>
+    </view>
+    <view class="tips">
+      <view class="tip">计算机</view>
+      <view class="tip">信息</view>
+      <view class="tip">女鞋</view>
+      <view class="tip">男装</view>
+    </view>
+  </view>
+</block>
